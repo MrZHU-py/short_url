@@ -1,0 +1,3 @@
+/home/zpy/Course/short_url/build/CMakeFiles/short_url.dir
+/home/zpy/Course/short_url/build/CMakeFiles/edit_cache.dir
+/home/zpy/Course/short_url/build/CMakeFiles/rebuild_cache.dir

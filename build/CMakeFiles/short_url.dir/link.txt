@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/short_url.dir/src/main.c.o CMakeFiles/short_url.dir/src/redis_handler.c.o CMakeFiles/short_url.dir/src/url_generator.c.o CMakeFiles/short_url.dir/src/utils.c.o -o short_url  -lmysqlclient -lhiredis 
