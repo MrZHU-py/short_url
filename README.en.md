@@ -1,36 +1,19 @@
 # short_url
 
 #### Description
-基于Redis实现的短地址生成服务，以时间为随机数种子，每次生成随机短地址。
+The short address generation service based on Redis generates random short addresses each time by time random number seed.
 
 #### Software Architecture
-Software architecture description
+The include folder includes all header files
+The src folder includes all the source files
+CMakeLists.txt
 
-#### Installation
+#### use
+Clone the repository to the local computer, go to the build directory, and delete the original files.
+Then run the following command:
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Instructions
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### Contribution
-
-1.  Fork the repository
-2.  Create Feat_xxx branch
-3.  Commit your code
-4.  Create Pull Request
-
-
-#### Gitee Feature
-
-1.  You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
-2.  Gitee blog [blog.gitee.com](https://blog.gitee.com)
-3.  Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
-4.  The most valuable open source project [GVP](https://gitee.com/gvp)
-5.  The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
-6.  The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+```shell
+cmake ..
+make
+```
+Finally, run the executable file
