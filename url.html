@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>短地址管理系统</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { width: 80%; margin: 0 auto; }
+        form { margin-bottom: 20px; }
+        label, input, button { display: block; margin-bottom: 10px; width: 100%; padding: 10px; }
+        .result { border: 1px solid #ddd; padding: 10px; }
+        .result p { margin: 0; }
+        .form-group { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>短地址管理系统</h1>
+
+        <div class="form-group">
+            <h2>生成短地址</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="create_url">
+                <label for="origin_url">原地址：</label>
+                <input type="text" id="origin_url" name="origin_url" required>
+                <button type="submit">生成短地址</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>解析短地址</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="select_url">
+                <label for="short_url">短地址：</label>
+                <input type="text" id="short_url" name="short_url" required>
+                <button type="submit">解析短地址</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>延长有效期</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="extend_time">
+                <label for="short_url_extend">短地址：</label>
+                <input type="text" id="short_url_extend" name="short_url" required>
+                <button type="submit">延长有效期</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>增加点数</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="incr_count_user">
+                <label for="short_url_count">短地址：</label>
+                <input type="text" id="short_url_count" name="short_url" required>
+                <button type="submit">增加点数</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>显示数据</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="show_all">
+                <button type="submit">显示所有数据</button>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h2>统计信息</h2>
+            <form action="/fcgi-bin/short_url" method="post">
+                <input type="hidden" name="action" value="display_all">
+                <button type="submit">显示统计信息</button>
+            </form>
+        </div>
+
+        <div class="result">
+            <p id="result_message"></p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var result = urlParams.get('result');
+            var resultMessage = document.getElementById('result_message');
+            if (result) {
+                resultMessage.innerText = result;
+            }
+        };
+    </script>
+</body>
+</html>
