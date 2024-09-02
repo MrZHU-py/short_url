@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.10)
 project(ShortURL VERSION 1.0)
 
 # 设置C标准
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
 # 包含头文件目录
@@ -17,4 +17,4 @@ file(GLOB SOURCES "src/*.c")
 add_executable(short_url ${SOURCES})
 
 # 链接需要的库
-target_link_libraries(short_url mysqlclient hiredis)
+target_link_libraries(short_url /usr/local/lib/libhiredis.so /usr/lib/x86_64-linux-gnu/libfcgi.so)
